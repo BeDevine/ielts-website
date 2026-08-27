@@ -34,7 +34,7 @@ export default function ContactPage() {
       <header className="border-b border-line">
         <div className="mx-auto flex max-w-2xl items-center justify-between px-6 py-5">
           <Link href="/" className="font-display text-lg tracking-tight text-ink">
-            IELTS with You
+            TRIELTS
           </Link>
           <Link href="/quiz" className="text-xs uppercase tracking-wide text-ink/60 hover:text-brass">
             Level check
@@ -44,9 +44,11 @@ export default function ContactPage() {
 
       <section className="mx-auto max-w-2xl px-6 py-16">
         <p className="font-mono text-xs uppercase tracking-[0.2em] text-teal">Get in touch</p>
-        <h1 className="mt-3 font-display text-3xl text-ink md:text-4xl">Ask about lessons</h1>
+        <h1 className="mt-3 font-display text-3xl text-ink md:text-4xl">Request a consultation</h1>
         <p className="mt-3 text-ink/65">
-          Tell me a bit about your goals and I'll get back to you with availability and pricing.
+          Whether you're arranging preparation for yourself, your family, or your
+          organisation, tell me a little about the timeline and goal and I'll follow up
+          with next steps.
         </p>
 
         {status === "sent" ? (

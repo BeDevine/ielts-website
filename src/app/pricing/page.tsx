@@ -7,14 +7,14 @@ export default function PricingPage() {
       <header className="border-b border-line">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
           <Link href="/" className="font-display text-lg tracking-tight text-ink">
-            IELTS with You
+            TRIELTS
           </Link>
           <nav className="flex items-center gap-6 text-sm">
             <Link href="/quiz" className="hover:text-brass transition-colors">
               Level check
             </Link>
             <Link href="/blog" className="hover:text-brass transition-colors">
-              Insights
+              Tips
             </Link>
             <Link href="/contact" className="hover:text-brass transition-colors">
               Consultation

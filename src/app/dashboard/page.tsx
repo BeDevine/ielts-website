@@ -13,7 +13,7 @@ export default async function DashboardPage() {
       <header className="border-b border-line">
         <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-5">
           <Link href="/" className="font-display text-lg tracking-tight text-ink">
-            IELTS with You
+            TRIELTS
           </Link>
           <div className="flex items-center gap-5 text-sm">
             <span className="text-ink/60">Hi, {user?.name}</span>

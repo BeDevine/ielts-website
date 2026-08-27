@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "IELTS with [Your Name] — Focused, honest IELTS coaching",
+  title: "TRIELTS — If you try you shall succeed",
   description:
-    "One-to-one and small-group IELTS preparation. Straight feedback, real practice materials, and a clear path to your target band.",
+    "Private IELTS coaching for individuals, organisations, and government clients. Focused, results-driven preparation with a clear path to your target band.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

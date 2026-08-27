@@ -39,7 +39,7 @@ function LoginForm() {
     <main className="flex min-h-screen items-center justify-center bg-paper px-6">
       <div className="w-full max-w-sm">
         <Link href="/" className="font-display text-lg text-ink">
-          IELTS with You
+          TRIELTS
         </Link>
 
         <h1 className="mt-8 font-display text-2xl text-ink">Teacher login</h1>

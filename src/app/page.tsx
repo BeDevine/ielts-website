@@ -15,13 +15,18 @@ export default async function HomePage() {
       {/* Nav */}
       <header className="border-b border-line">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
-          <span className="font-display text-lg tracking-tight">IELTS with You</span>
+          <div>
+            <span className="font-display text-lg tracking-tight">TRIELTS</span>
+            <p className="font-mono text-[10px] uppercase tracking-wide text-ink/40">
+              If you try you shall succeed
+            </p>
+          </div>
           <nav className="flex items-center gap-6 text-sm">
             <Link href="/quiz" className="hover:text-brass transition-colors">
               Level check
             </Link>
             <Link href="/blog" className="hover:text-brass transition-colors">
-              Insights
+              Tips
             </Link>
             <Link href="/pricing" className="hover:text-brass transition-colors">
               Pricing
@@ -237,7 +242,7 @@ export default async function HomePage() {
       <section className="border-t border-line">
         <div className="mx-auto max-w-6xl px-6 py-20">
           <div className="flex items-baseline justify-between">
-            <h2 className="font-display text-2xl text-ink md:text-3xl">Insights</h2>
+            <h2 className="font-display text-2xl text-ink md:text-3xl">Tips</h2>
             <Link href="/blog" className="text-sm text-teal hover:underline">
               View all
             </Link>
@@ -272,7 +277,7 @@ export default async function HomePage() {
       {/* Footer */}
       <footer className="border-t border-line">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 py-10 text-sm text-ink/50 md:flex-row">
-          <span>© {new Date().getFullYear()} IELTS with You.</span>
+          <span>© {new Date().getFullYear()} TRIELTS.</span>
           <div className="flex gap-6">
             <Link href="/quiz" className="hover:text-brass">
               Level check
