@@ -6,7 +6,7 @@ export default async function HomePage() {
     .findMany({
       where: { published: true },
       orderBy: { createdAt: "desc" },
-      take: 3,
+      take: 1,
     })
     .catch(() => []);
 
@@ -242,7 +242,7 @@ export default async function HomePage() {
       <section className="border-t border-line">
         <div className="mx-auto max-w-6xl px-6 py-20">
           <div className="flex items-baseline justify-between">
-            <h2 className="font-display text-2xl text-ink md:text-3xl">Tips</h2>
+            <h2 className="font-display text-2xl text-ink md:text-3xl">TIPS</h2>
             <Link href="/blog" className="text-sm text-teal hover:underline">
               View all
             </Link>
@@ -253,7 +253,7 @@ export default async function HomePage() {
               Nothing published yet — new notes will appear here.
             </p>
           ) : (
-            <div className="mt-10 grid gap-8 md:grid-cols-3">
+            <div className="mt-10 max-w-xl">
               {recentPosts.map((post) => (
                 <Link
                   key={post.id}
