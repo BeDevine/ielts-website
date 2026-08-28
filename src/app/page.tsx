@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { db } from "@/lib/db";
+import SiteHeader from "@/components/site-header";
 
 export default async function HomePage() {
   const recentPosts = await db.post
@@ -10,51 +11,47 @@ export default async function HomePage() {
     })
     .catch(() => []);
 
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    name: "TRIELTS",
+    description:
+      "Private IELTS coaching for individuals, organisations, and government clients.",
+    url: "https://trielts.com",
+    slogan: "If you try you shall succeed",
+    areaServed: "Worldwide",
+    founder: {
+      "@type": "Person",
+      jobTitle: "IELTS Coach",
+      description:
+        "PGCE-qualified teacher with international IELTS teaching experience across Ireland, Italy, China, and Vietnam.",
+    },
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+      <HomePageContent recentPosts={recentPosts} />
+    </>
+  );
+}
+
+function HomePageContent({ recentPosts }: { recentPosts: Awaited<ReturnType<typeof db.post.findMany>> }) {
   return (
     <main>
-      {/* Nav */}
-      <header className="border-b border-line">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
-          <div>
-            <span className="font-display text-lg tracking-tight">TRIELTS</span>
-            <p className="font-mono text-[10px] uppercase tracking-wide text-ink/40">
-              If you try you shall succeed
-            </p>
-          </div>
-          <nav className="flex items-center gap-6 text-sm">
-            <Link href="/quiz" className="hover:text-brass transition-colors">
-              Level check
-            </Link>
-            <Link href="/blog" className="hover:text-brass transition-colors">
-              Tips
-            </Link>
-            <Link href="/pricing" className="hover:text-brass transition-colors">
-              Pricing
-            </Link>
-            <Link
-              href="/contact"
-              className="rounded-full bg-ink px-4 py-1.5 text-xs uppercase tracking-wide text-paper hover:bg-brass transition-colors"
-            >
-              Request a consultation
-            </Link>
-            <Link
-              href="/login"
-              className="rounded-full border border-ink/20 px-4 py-1.5 text-xs uppercase tracking-wide hover:border-brass hover:text-brass transition-colors"
-            >
-              Teacher login
-            </Link>
-          </nav>
-        </div>
-      </header>
+      <SiteHeader showTagline />
 
       {/* Hero */}
       <section className="relative overflow-hidden">
-        <div className="mx-auto grid max-w-6xl gap-12 px-6 py-20 md:grid-cols-[1.2fr_1fr] md:py-28">
+        <div className="mx-auto grid max-w-6xl gap-12 px-6 py-16 md:grid-cols-[1.2fr_1fr] md:py-28">
           <div>
             <p className="font-mono text-xs uppercase tracking-[0.2em] text-teal">
               Private IELTS Coaching
             </p>
-            <h1 className="mt-4 font-display text-4xl leading-[1.1] tracking-tight text-ink md:text-6xl">
+            <h1 className="mt-4 font-display text-3xl leading-[1.15] tracking-tight text-ink sm:text-4xl md:text-6xl md:leading-[1.1]">
               English preparation for people whose
               <em className="text-brass not-italic"> outcomes matter.</em>
             </h1>
@@ -80,16 +77,16 @@ export default async function HomePage() {
 
           {/* Signature element: a stamped band-score seal */}
           <div className="flex items-center justify-center">
-            <div className="relative aspect-square w-56 -rotate-6 rounded-full border-[3px] border-brass/70 md:w-72">
+            <div className="relative aspect-square w-40 -rotate-6 rounded-full border-[3px] border-brass/70 sm:w-56 md:w-72">
               <div className="absolute inset-3 rounded-full border border-dashed border-brass/50" />
               <div className="flex h-full w-full flex-col items-center justify-center text-center">
-                <span className="font-mono text-xs uppercase tracking-[0.3em] text-brass">
+                <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-brass sm:text-xs">
                   Target
                 </span>
-                <span className="font-display text-6xl font-semibold text-ink md:text-7xl">
+                <span className="font-display text-4xl font-semibold text-ink sm:text-6xl md:text-7xl">
                   9
                 </span>
-                <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink/50">
+                <span className="font-mono text-[8px] uppercase tracking-[0.2em] text-ink/50 sm:text-[10px]">
                   Overall Band
                 </span>
               </div>
@@ -100,14 +97,14 @@ export default async function HomePage() {
 
       {/* Three audience tracks */}
       <section className="border-t border-line bg-white/40">
-        <div className="mx-auto max-w-6xl px-6 py-20">
+        <div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
           <h2 className="font-display text-2xl text-ink md:text-3xl">Who this is for</h2>
           <p className="mt-3 max-w-xl text-ink/65">
             Three kinds of clients, one standard of preparation.
           </p>
 
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
-            <div className="rounded-2xl border border-line bg-paper p-8">
+          <div className="mt-10 grid gap-6 md:mt-12 md:grid-cols-3">
+            <div className="rounded-2xl border border-line bg-paper p-6 sm:p-8">
               <span className="font-mono text-xs uppercase tracking-wide text-brass">
                 Organisations
               </span>
@@ -120,7 +117,7 @@ export default async function HomePage() {
               </p>
             </div>
 
-            <div className="rounded-2xl border border-line bg-paper p-8">
+            <div className="rounded-2xl border border-line bg-paper p-6 sm:p-8">
               <span className="font-mono text-xs uppercase tracking-wide text-brass">
                 Public sector
               </span>
@@ -132,7 +129,7 @@ export default async function HomePage() {
               </p>
             </div>
 
-            <div className="rounded-2xl border border-line bg-paper p-8">
+            <div className="rounded-2xl border border-line bg-paper p-6 sm:p-8">
               <span className="font-mono text-xs uppercase tracking-wide text-brass">
                 Private clients
               </span>
@@ -149,8 +146,8 @@ export default async function HomePage() {
 
       {/* Credentials — trust signal for institutional/corporate buyers */}
       <section className="border-t border-line">
-        <div className="mx-auto max-w-6xl px-6 py-20">
-          <div className="grid gap-12 md:grid-cols-[1fr_1.4fr]">
+        <div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
+          <div className="grid gap-10 md:grid-cols-[1fr_1.4fr] md:gap-12">
             <div>
               <p className="font-mono text-xs uppercase tracking-[0.2em] text-teal">Your coach</p>
               <h2 className="mt-3 font-display text-2xl text-ink">Qualified. International. Discreet.</h2>
@@ -196,14 +193,14 @@ export default async function HomePage() {
 
       {/* The path — band scores are a real sequence, so numbering earns its place here */}
       <section className="border-t border-line">
-        <div className="mx-auto max-w-6xl px-6 py-20">
+        <div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
           <h2 className="font-display text-2xl text-ink md:text-3xl">The path to your band</h2>
           <p className="mt-3 max-w-xl text-ink/70">
             Every client starts at a different point. Coaching is built around the specific
             score gap and deadline, not a fixed syllabus.
           </p>
 
-          <div className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-line bg-line md:grid-cols-4">
+          <div className="mt-10 grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-2 md:mt-12 md:grid-cols-4">
             {[
               {
                 band: "Band 4–5",
@@ -240,7 +237,7 @@ export default async function HomePage() {
 
       {/* Blog teaser */}
       <section className="border-t border-line">
-        <div className="mx-auto max-w-6xl px-6 py-20">
+        <div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
           <div className="flex items-baseline justify-between">
             <h2 className="font-display text-2xl text-ink md:text-3xl">TIPS</h2>
             <Link href="/blog" className="text-sm text-teal hover:underline">
@@ -253,7 +250,7 @@ export default async function HomePage() {
               Nothing published yet — new notes will appear here.
             </p>
           ) : (
-            <div className="mt-10 max-w-xl">
+            <div className="mt-8 max-w-xl md:mt-10">
               {recentPosts.map((post) => (
                 <Link
                   key={post.id}
@@ -278,7 +275,7 @@ export default async function HomePage() {
       <footer className="border-t border-line">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 py-10 text-sm text-ink/50 md:flex-row">
           <span>© {new Date().getFullYear()} TRIELTS.</span>
-          <div className="flex gap-6">
+          <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
             <Link href="/quiz" className="hover:text-brass">
               Level check
             </Link>

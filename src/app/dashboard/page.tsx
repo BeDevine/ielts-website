@@ -1,8 +1,14 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { db } from "@/lib/db";
 import { getCurrentUser } from "@/lib/session";
 import LogoutButton from "./logout-button";
 import DeletePostButton from "./delete-post-button";
+
+export const metadata: Metadata = {
+  title: "Dashboard | TRIELTS",
+  robots: { index: false, follow: false },
+};
 
 export default async function DashboardPage() {
   const user = await getCurrentUser();

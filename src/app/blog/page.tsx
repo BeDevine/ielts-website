@@ -1,5 +1,17 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { db } from "@/lib/db";
+import SiteHeader from "@/components/site-header";
+
+export const metadata: Metadata = {
+  title: "IELTS Tips & Insights | TRIELTS",
+  description:
+    "Practical, specific IELTS preparation notes covering Listening, Reading, Writing, and Speaking — written from real teaching experience.",
+  openGraph: {
+    title: "IELTS Tips & Insights | TRIELTS",
+    description: "Practical, specific IELTS preparation notes.",
+  },
+};
 
 export default async function BlogIndexPage() {
   const posts = await db.post.findMany({
@@ -9,23 +21,14 @@ export default async function BlogIndexPage() {
 
   return (
     <main className="min-h-screen bg-paper">
-      <header className="border-b border-line">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
-          <Link href="/" className="font-display text-lg tracking-tight text-ink">
-            TRIELTS
-          </Link>
-          <Link href="/login" className="text-xs uppercase tracking-wide text-ink/60 hover:text-brass">
-            Teacher login
-          </Link>
-        </div>
-      </header>
+      <SiteHeader />
 
-      <section className="mx-auto max-w-3xl px-6 py-16">
+      <section className="mx-auto max-w-3xl px-6 py-12 md:py-16">
         <p className="font-mono text-xs uppercase tracking-[0.2em] text-teal">Resources</p>
         <h1 className="mt-3 font-display text-3xl text-ink md:text-4xl">Study notes</h1>
         <p className="mt-3 text-ink/65">Practical, specific notes — not generic tips.</p>
 
-        <div className="mt-12 divide-y divide-line border-t border-line">
+        <div className="mt-10 divide-y divide-line border-t border-line md:mt-12">
           {posts.length === 0 && <p className="py-8 text-sm text-ink/60">Nothing published yet.</p>}
           {posts.map((post) => (
             <Link key={post.id} href={`/blog/${post.slug}`} className="group block py-7">
