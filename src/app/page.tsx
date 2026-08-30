@@ -2,6 +2,8 @@ import Link from "next/link";
 import { db } from "@/lib/db";
 import SiteHeader from "@/components/site-header";
 
+export const dynamic = "force-dynamic";
+
 export default async function HomePage() {
   const recentPosts = await db.post
     .findMany({
