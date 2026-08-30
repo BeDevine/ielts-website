@@ -31,3 +31,8 @@ model Post {
  author User @relation(fields: [authorId], references: [id])
  authorId String
 }
+
+model SiteStat {
+ id String @id @default("main")
+ count Int @default(0)
+}

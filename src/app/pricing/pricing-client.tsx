@@ -10,7 +10,7 @@ const packages = [
     unitGbp: null,
     unitLabel: "per 60-minute session",
     description: "For a diagnostic, a focused skill review, or ongoing flexible booking.",
-    features: ["One-to-one, 60 minutes", "Full written feedback after each session", "Book as you go"],
+    features: ["Up to 10 people, 60 minutes", "Full written feedback after each session", "Book as you go"],
   },
   {
     name: "5-session package",

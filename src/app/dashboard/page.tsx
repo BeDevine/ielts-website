@@ -13,6 +13,7 @@ export const metadata: Metadata = {
 export default async function DashboardPage() {
   const user = await getCurrentUser();
   const posts = await db.post.findMany({ orderBy: { createdAt: "desc" } });
+  const siteStat = await db.siteStat.findUnique({ where: { id: "main" } }).catch(() => null);
 
   return (
     <main className="min-h-screen bg-paper">
@@ -29,6 +30,15 @@ export default async function DashboardPage() {
       </header>
 
       <section className="mx-auto max-w-5xl px-6 py-12">
+        <div className="mb-8 inline-flex items-center gap-3 rounded-xl border border-line bg-white/60 px-5 py-4">
+          <span className="font-mono text-[10px] uppercase tracking-wide text-ink/50">
+            Site visits
+          </span>
+          <span className="font-display text-2xl text-ink">
+            {(siteStat?.count ?? 0).toLocaleString()}
+          </span>
+        </div>
+
         <div className="flex items-center justify-between">
           <h1 className="font-display text-2xl text-ink">Your posts</h1>
           <Link
