@@ -3,22 +3,26 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://trielts.com"),
-  title: "TRIELTS — If you try you shall succeed",
+
+  title: "TRIELTS | Private IELTS Coaching & Preparation",
+
   description:
-    "Private IELTS coaching for individuals, organisations, and government clients. Focused, results-driven preparation with a clear path to your target band.",
+    "Private IELTS coaching and preparation for individuals, professionals, families, organisations, and government clients. Targeted support for IELTS Reading, Writing, Listening and Speaking.",
+
   openGraph: {
     siteName: "TRIELTS",
-    title: "TRIELTS — If you try you shall succeed",
+    title: "TRIELTS | Private IELTS Coaching & Preparation",
     description:
-      "Private IELTS coaching for individuals, organisations, and government clients.",
+      "Private IELTS coaching and preparation for individuals, professionals, families, organisations, and government clients.",
     type: "website",
     locale: "en_GB",
   },
+
   twitter: {
     card: "summary_large_image",
-    title: "TRIELTS — If you try you shall succeed",
+    title: "TRIELTS | Private IELTS Coaching & Preparation",
     description:
-      "Private IELTS coaching for individuals, organisations, and government clients.",
+      "Private IELTS coaching and preparation for individuals, professionals, families, organisations, and government clients.",
   },
 };
 
