@@ -62,9 +62,8 @@ function HomePageContent({ recentPosts }: { recentPosts: Awaited<ReturnType<type
             <p className="font-mono text-xs uppercase tracking-[0.2em] text-teal">
               Private IELTS Coaching
             </p>
-            <h1 className="mt-4 font-display text-3xl leading-[1.15] tracking-tight text-ink sm:text-4xl md:text-6xl md:leading-[1.1]">
-              English preparation for people whose
-              <em className="text-brass not-italic"> outcomes matter.</em>
+            <h1>
+              Private IELTS Coaching &amp; Preparation
             </h1>
             <p className="mt-6 max-w-lg text-base leading-relaxed text-ink/70">
               Discreet, results-focused IELTS coaching for executives, relocating families,
