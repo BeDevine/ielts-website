@@ -7,6 +7,7 @@ const NAV_LINKS = [
   { href: "/quiz", label: "Level check" },
   { href: "/blog", label: "Tips" },
   { href: "/pricing", label: "Pricing" },
+  { href: "/about", label: "About" },
 ];
 
 export default function SiteHeader({ showTagline = false }: { showTagline?: boolean }) {
@@ -15,13 +16,19 @@ export default function SiteHeader({ showTagline = false }: { showTagline?: bool
   return (
     <header className="border-b border-line relative">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
-        <Link href="/" onClick={() => setOpen(false)}>
-          <span className="font-display text-lg tracking-tight text-ink">TRIELTS</span>
-          {showTagline && (
-            <p className="font-mono text-[10px] uppercase tracking-wide text-ink/40">
-              If you try you shall succeed
-            </p>
-          )}
+        <Link href="/" onClick={() => setOpen(false)} className="flex items-center gap-2.5">
+          <img src="/trielts-icon.png" alt="" className="h-8 w-auto" />
+          <div>
+            <span className="font-display text-lg tracking-tight">
+              <span className="text-[#D4293C]">TR</span>
+              <span className="text-ink">IELTS</span>
+            </span>
+            {showTagline && (
+              <p className="font-mono text-[10px] uppercase tracking-wide text-ink/40">
+                If you try you shall succeed
+              </p>
+            )}
+          </div>
         </Link>
 
         {/* Desktop nav */}

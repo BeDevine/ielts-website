@@ -35,7 +35,7 @@ export default async function HomePage() {
       "@type": "Person",
       jobTitle: "IELTS Coach",
       description:
-        "PGCE-qualified teacher with international IELTS teaching experience across Ireland, Italy, China, and Vietnam.",
+        "PGCE-qualified teacher with international IELTS teaching experience across Ireland, Italy, Switzerland, Poland, China, Vietnam, Mexico, and Malawi.",
     },
   };
 
@@ -62,8 +62,9 @@ function HomePageContent({ recentPosts }: { recentPosts: Awaited<ReturnType<type
             <p className="font-mono text-xs uppercase tracking-[0.2em] text-teal">
               Private IELTS Coaching
             </p>
-            <h1>
-              Private IELTS Coaching &amp; Preparation
+            <h1 className="mt-4 font-display text-3xl leading-[1.15] tracking-tight text-ink sm:text-4xl md:text-6xl md:leading-[1.1]">
+              English preparation for people whose
+              <em className="text-brass not-italic"> outcomes matter.</em>
             </h1>
             <p className="mt-6 max-w-lg text-base leading-relaxed text-ink/70">
               Discreet, results-focused IELTS coaching for executives, relocating families,
@@ -161,6 +162,9 @@ function HomePageContent({ recentPosts }: { recentPosts: Awaited<ReturnType<type
             <div>
               <p className="font-mono text-xs uppercase tracking-[0.2em] text-teal">Your coach</p>
               <h2 className="mt-3 font-display text-2xl text-ink">Qualified. International. Discreet.</h2>
+              <Link href="/about" className="mt-4 inline-block text-sm text-teal hover:underline">
+                Meet your coach →
+              </Link>
             </div>
             <div className="grid gap-6 sm:grid-cols-2">
               <div>
@@ -175,7 +179,8 @@ function HomePageContent({ recentPosts }: { recentPosts: Awaited<ReturnType<type
               <div>
                 <span className="font-mono text-xs uppercase tracking-wide text-brass">Experience</span>
                 <p className="mt-2 text-sm leading-relaxed text-ink/70">
-                  Years teaching IELTS across Ireland, Italy, China, and Vietnam, plus
+                  Years teaching IELTS across Ireland, Italy, Switzerland, Poland, China, Vietnam,
+                  Mexico, and Malawi, plus
                   extensive online coaching — working with students of every age and
                   background, from teenagers to senior executives.
                 </p>
@@ -286,6 +291,9 @@ function HomePageContent({ recentPosts }: { recentPosts: Awaited<ReturnType<type
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 py-10 text-sm text-ink/50 md:flex-row">
           <span>© {new Date().getFullYear()} TRIELTS.</span>
           <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
+            <Link href="/about" className="hover:text-brass">
+              About
+            </Link>
             <Link href="/quiz" className="hover:text-brass">
               Level check
             </Link>
