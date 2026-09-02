@@ -1,7 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest) {
-  const { name, email, targetBand, message } = await req.json();
+  const { name, email, whatsapp, currentLevel, targetBand, testDate, testType, message } =
+    await req.json();
 
   if (!name || !email || !message) {
     return NextResponse.json({ error: "Name, email, and message are required." }, { status: 400 });
@@ -25,14 +26,18 @@ export async function POST(req: NextRequest) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      from: `IELTS site <${fromEmail}>`,
+      from: `TRIELTS site <${fromEmail}>`,
       to: [toEmail],
       reply_to: email,
-      subject: `New lesson inquiry from ${name}`,
+      subject: `New consultation request from ${name}`,
       text: [
         `Name: ${name}`,
         `Email: ${email}`,
+        whatsapp ? `WhatsApp: ${whatsapp}` : null,
+        testType ? `Test type: ${testType}` : null,
+        currentLevel ? `Current level: ${currentLevel}` : null,
         targetBand ? `Target band: ${targetBand}` : null,
+        testDate ? `Test date: ${testDate}` : null,
         "",
         message,
       ]
