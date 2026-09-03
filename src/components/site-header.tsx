@@ -25,7 +25,7 @@ export default function SiteHeader({ showTagline = false }: { showTagline?: bool
             </span>
             {showTagline && (
               <p className="font-mono text-[10px] uppercase tracking-wide text-ink/40">
-                If you try you shall succeed
+                Try and you shall succeed
               </p>
             )}
           </div>

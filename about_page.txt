@@ -5,7 +5,7 @@ import SiteHeader from "@/components/site-header";
 export const metadata: Metadata = {
   title: "Barry Devine — IELTS Coach | TRIELTS",
   description:
-    "Meet your IELTS coach: 17 years of international teaching experience, including 7 years teaching IELTS alongside Cambridge, AP, and IB curricula. PGCE-qualified, with additional Cambridge, AP, and IB curriculum experience across 8 countries.",
+    "Meet your IELTS coach: 17 years of international teaching experience, 7 years teaching IELTS alongside Cambridge, AP, and IB curricula. PGCE-qualified, with additional Cambridge, AP, and IB curriculum experience across 8 countries.",
   openGraph: {
     title: "Barry Devine — IELTS Coach | TRIELTS",
     description: "17 years of international teaching experience, including 7 years teaching IELTS.",
@@ -44,10 +44,10 @@ export default function AboutPage() {
           <div>
             <p className="text-base leading-relaxed text-ink/75">
               I've spent the last 17 years teaching internationally — across Ireland, Italy,
-              Switzerland, Poland, China, Vietnam, Mexico, and Malawi, as well as extensively online. Over the past 7 years, alongside
-              Cambridge, AP, and IB curricula, that work has increasingly focused on IELTS
-              preparation, working with students of every age and background, from teenagers
-              to senior executives preparing for relocation, study, or citizenship.
+              Switzerland, Poland, China, Vietnam, Mexico, and Malawi, as well as extensively online. For the last 5+ years, that
+              work has been focused specifically on IELTS preparation, working with students
+              of every age and background, from teenagers to senior executives preparing for
+              relocation, study, or citizenship.
             </p>
             <p className="mt-4 text-base leading-relaxed text-ink/75">
               I'm a PGCE-qualified teacher, and my background goes beyond English language

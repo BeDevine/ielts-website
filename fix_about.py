@@ -1,0 +1,5 @@
+content = open('about_page.txt').read()
+content = content.replace('For the last 5+ years, that' + chr(10) + ' work has been focused specifically on IELTS preparation,', 'Over the past 7 years, alongside Cambridge, AP, and IB curricula, that' + chr(10) + ' work has increasingly focused on IELTS preparation,')
+content = content.replace('including 7years teaching IELTS.', 'including 7 years teaching IELTS.')
+open('about_page.txt', 'w').write(content)
+print('Done')

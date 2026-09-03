@@ -29,7 +29,7 @@ export default async function HomePage() {
     description:
       "Private IELTS coaching for individuals, organisations, and government clients.",
     url: "https://trielts.com",
-    slogan: "If you try you shall succeed",
+    slogan: "Try and you shall succeed",
     areaServed: "Worldwide",
     founder: {
       "@type": "Person",
