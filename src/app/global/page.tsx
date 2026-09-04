@@ -3,7 +3,7 @@ import SiteHeader from "@/components/site-header";
 import GlobalClient from "./global-client";
 
 export const metadata: Metadata = {
-  title: "TRIELTS in Your Language | 中文 · 日本語 · العربية · 한국어 · Tiếng Việt · Español",
+  title: "TRIELTS in Your Language | 中文 · 日本語 · العربية · 한국어 · Tiếng Việt · Español · Deutsch · Français · Português",
   description:
     "Learn about TRIELTS IELTS coaching in Chinese, Japanese, Arabic, Korean, Vietnamese, or Spanish.",
 };
