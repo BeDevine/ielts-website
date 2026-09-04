@@ -33,6 +33,14 @@ export default function SiteHeader({ showTagline = false }: { showTagline?: bool
 
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-6 text-sm">
+          <Link
+            href="/global"
+            aria-label="Other languages"
+            title="Other languages"
+            className="flex h-8 w-8 items-center justify-center rounded-full border border-line text-base hover:border-brass"
+          >
+            🌐
+          </Link>
           {NAV_LINKS.map((link) => (
             <Link key={link.href} href={link.href} className="hover:text-brass transition-colors">
               {link.label}
@@ -53,7 +61,14 @@ export default function SiteHeader({ showTagline = false }: { showTagline?: bool
         </nav>
 
         {/* Mobile: compact CTA + hamburger */}
-        <div className="flex items-center gap-3 md:hidden">
+        <div className="flex items-center gap-2 md:hidden">
+          <Link
+            href="/global"
+            aria-label="Other languages"
+            className="flex h-9 w-9 items-center justify-center rounded-full border border-line text-base"
+          >
+            🌐
+          </Link>
           <Link
             href="/contact"
             className="rounded-full bg-ink px-4 py-1.5 text-xs uppercase tracking-wide text-paper"

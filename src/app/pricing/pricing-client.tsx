@@ -79,17 +79,17 @@ export default function PricingClient() {
       <div className="mt-8 grid gap-6 md:grid-cols-4">
         {packages.map((pkg) =>
           pkg.highlighted ? (
-            <div key={pkg.name} className="rounded-2xl bg-ink p-6 text-paper shadow-sm">
+            <div key={pkg.name} className="rounded-2xl border border-line bg-brass/10 p-6 shadow-sm">
               <span className="font-mono text-[10px] uppercase tracking-wide text-brass">
                 Most popular
               </span>
-              <h2 className="mt-2 font-display text-lg">{pkg.name}</h2>
-              <p className="mt-4 font-display text-3xl">{convert(pkg.gbpPrice)}</p>
-              <p className="mt-1 font-mono text-xs text-paper/60">
+              <h2 className="mt-2 font-display text-lg text-ink">{pkg.name}</h2>
+              <p className="mt-4 font-display text-3xl text-ink">{convert(pkg.gbpPrice)}</p>
+              <p className="mt-1 font-mono text-xs text-ink/50">
                 {pkg.unitGbp ? `${convert(pkg.unitGbp)} ${pkg.unitLabel}` : pkg.unitLabel}
               </p>
-              <p className="mt-4 text-sm leading-relaxed text-paper/75">{pkg.description}</p>
-              <ul className="mt-5 space-y-2 text-sm text-paper/80">
+              <p className="mt-4 text-sm leading-relaxed text-ink/65">{pkg.description}</p>
+              <ul className="mt-5 space-y-2 text-sm text-ink/70">
                 {pkg.features.map((f) => (
                   <li key={f} className="flex gap-2">
                     <span className="text-brass">—</span>
