@@ -8,8 +8,9 @@
     "start": "next start",
     "lint": "next lint",
     "db:push": "prisma db push",
-    "db:seed": "tsx prisma/seed.ts",
-    "db:reset-password": "tsx prisma/reset-password.ts",
+    "db:seed": "tsx --env-file=.env prisma/seed.ts",
+    "db:reset-password": "tsx --env-file=.env prisma/reset-password.ts",
+    "db:list": "tsx --env-file=.env prisma/list-posts.ts",
     "db:studio": "prisma studio"
   },
   "dependencies": {
