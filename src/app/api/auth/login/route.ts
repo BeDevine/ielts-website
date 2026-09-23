@@ -29,6 +29,9 @@ export async function POST(req: NextRequest) {
     sameSite: "lax",
     path: "/",
     maxAge: 60 * 60 * 24 * 7,
+    // Scope the cookie to the whole domain family (covers both apex and www)
+    // rather than the exact host the login request happened to hit.
+    domain: process.env.NODE_ENV === "production" ? ".trielts.com" : undefined,
   });
   return res;
 }
