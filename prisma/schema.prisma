@@ -36,3 +36,13 @@ model SiteStat {
  id String @id @default("main")
  count Int @default(0)
 }
+
+model Testimonial {
+  id        String   @id @default(cuid())
+  name      String
+  company   String?
+  context   String?
+  message   String
+  approved  Boolean  @default(false)
+  createdAt DateTime @default(now())
+}

@@ -13,6 +13,14 @@ export default async function HomePage() {
     })
     .catch(() => []);
 
+  const recentTestimonials = await db.testimonial
+    .findMany({
+      where: { approved: true },
+      orderBy: { createdAt: "desc" },
+      take: 2,
+    })
+    .catch(() => []);
+
   // Increment the site visit counter (best-effort, never blocks the page)
   db.siteStat
     .upsert({
@@ -45,12 +53,18 @@ export default async function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
-      <HomePageContent recentPosts={recentPosts} />
+      <HomePageContent recentPosts={recentPosts} recentTestimonials={recentTestimonials} />
     </>
   );
 }
 
-function HomePageContent({ recentPosts }: { recentPosts: Awaited<ReturnType<typeof db.post.findMany>> }) {
+function HomePageContent({
+  recentPosts,
+  recentTestimonials,
+}: {
+  recentPosts: Awaited<ReturnType<typeof db.post.findMany>>;
+  recentTestimonials: Awaited<ReturnType<typeof db.testimonial.findMany>>;
+}) {
   return (
     <main>
       <SiteHeader showTagline />
@@ -286,6 +300,41 @@ function HomePageContent({ recentPosts }: { recentPosts: Awaited<ReturnType<type
         </div>
       </section>
 
+      {/* Testimonials teaser */}
+      <section className="border-t border-line bg-white/40">
+        <div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
+          <div className="flex items-baseline justify-between">
+            <h2 className="font-display text-2xl text-ink md:text-3xl">Testimonials</h2>
+            <Link href="/testimonials" className="text-sm text-teal hover:underline">
+              View all
+            </Link>
+          </div>
+
+          {recentTestimonials.length === 0 ? (
+            <p className="mt-8 text-sm text-ink/60">
+              No testimonials yet — check back soon.
+            </p>
+          ) : (
+            <div className="mt-8 grid gap-6 md:mt-10 md:grid-cols-2">
+              {recentTestimonials.map((t) => (
+                <div key={t.id} className="rounded-2xl border border-line bg-paper p-6">
+                  <p className="text-sm leading-relaxed text-ink/80">"{t.message}"</p>
+                  <p className="mt-4 font-display text-sm text-ink">
+                    {t.name}
+                    {(t.company || t.context) && (
+                      <span className="text-ink/50 font-body">
+                        {" — "}
+                        {[t.company, t.context].filter(Boolean).join(", ")}
+                      </span>
+                    )}
+                  </p>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="border-t border-line">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 py-10 text-sm text-ink/50 md:flex-row">
@@ -296,6 +345,9 @@ function HomePageContent({ recentPosts }: { recentPosts: Awaited<ReturnType<type
             </Link>
             <Link href="/quiz" className="hover:text-brass">
               Level check
+            </Link>
+            <Link href="/testimonials" className="hover:text-brass">
+              Testimonials
             </Link>
             <Link href="/pricing" className="hover:text-brass">
               Pricing
