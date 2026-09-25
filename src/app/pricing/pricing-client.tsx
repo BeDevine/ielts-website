@@ -6,7 +6,7 @@ import CurrencySelector, { useCurrency } from "./currency-selector";
 const packages = [
   {
     name: "Single session",
-    gbpPrice: 195,
+    gbpPrice: 129,
     unitGbp: null,
     unitLabel: "per 60-minute session",
     description: "For a diagnostic, a focused skill review, or ongoing flexible booking.",
@@ -14,8 +14,8 @@ const packages = [
   },
   {
     name: "5-session package",
-    gbpPrice: 925,
-    unitGbp: 185,
+    gbpPrice: 600,
+    unitGbp: 120,
     unitLabel: "per session",
     description: "A short, focused block — ideal for a specific skill gap or a near-term test date.",
     features: ["Everything in Single session", "Personalised study plan", "Priority scheduling"],
@@ -23,8 +23,8 @@ const packages = [
   },
   {
     name: "10-session package",
-    gbpPrice: 1750,
-    unitGbp: 175,
+    gbpPrice: 1100,
+    unitGbp: 110,
     unitLabel: "per session",
     description: "The standard programme for moving up a full band, start to finish.",
     features: ["Everything in 5-session", "Full diagnostic + progress reviews", "Direct message access between sessions"],
@@ -32,8 +32,8 @@ const packages = [
   },
   {
     name: "20-session package",
-    gbpPrice: 3200,
-    unitGbp: 160,
+    gbpPrice: 1900,
+    unitGbp: 95,
     unitLabel: "per session",
     description: "For an ambitious target band, a tight deadline, or sustained, intensive coaching.",
     features: ["Everything in 10-session", "Mock test with full band breakdown", "Flexible rescheduling"],
