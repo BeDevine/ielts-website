@@ -100,22 +100,23 @@ function HomePageContent({
             </div>
           </div>
 
-          {/* Signature element: a stamped band-score seal */}
-          <div className="flex items-center justify-center">
-            <div className="relative aspect-square w-40 -rotate-6 rounded-full border-[3px] border-brass/70 sm:w-56 md:w-72">
-              <div className="absolute inset-3 rounded-full border border-dashed border-brass/50" />
-              <div className="flex h-full w-full flex-col items-center justify-center text-center">
-                <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-brass sm:text-xs">
-                  Target
-                </span>
-                <span className="font-display text-4xl font-semibold text-ink sm:text-6xl md:text-7xl">
-                  9
-                </span>
-                <span className="font-mono text-[8px] uppercase tracking-[0.2em] text-ink/50 sm:text-[10px]">
-                  Overall Band
-                </span>
-              </div>
-            </div>
+          {/* Signature element: logo mark + quick benefits */}
+          <div className="flex flex-col items-center justify-center gap-6">
+            <img src="/trielts-icon.png" alt="" className="h-20 w-auto sm:h-28" />
+            <ul className="w-full max-w-xs space-y-2.5">
+              {[
+                "Reach your target IELTS band faster with focused, one-to-one coaching",
+                "Practical strategies for Listening, Reading, Writing & Speaking",
+                "Detailed feedback after every session, not just a score",
+                "Build the confidence to perform under real exam conditions",
+                "Flexible scheduling that works around a tight test deadline",
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-2.5 text-sm text-ink/75">
+                  <span className="mt-0.5 text-brass">✓</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>
