@@ -3,6 +3,8 @@ import Link from "next/link";
 import { db } from "@/lib/db";
 import TestimonialsAdmin from "./testimonials-admin";
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: "Testimonials | Dashboard",
   robots: { index: false, follow: false },
