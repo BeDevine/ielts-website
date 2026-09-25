@@ -77,7 +77,7 @@ function HomePageContent({
               Private IELTS Coaching
             </p>
             <h1 className="mt-4 font-display text-3xl leading-[1.15] tracking-tight text-ink sm:text-4xl md:text-6xl md:leading-[1.1]">
-              English preparation for people whose
+              Private IELTS coaching for people whose
               <em className="text-brass not-italic"> outcomes matter.</em>
             </h1>
             <p className="mt-6 max-w-lg text-base leading-relaxed text-ink/70">

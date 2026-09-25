@@ -5,14 +5,14 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://trielts.com"),
 
-  title: "TRIELTS | Private IELTS Coaching & Preparation",
+  title: "TRIELTS | Private IELTS Coach & Exam Coaching",
 
   description:
     "Private IELTS coaching and preparation for individuals, professionals, families, organisations, and government clients. Targeted support for IELTS Reading, Writing, Listening and Speaking.",
 
   openGraph: {
     siteName: "TRIELTS",
-    title: "TRIELTS | Private IELTS Coaching & Preparation",
+    title: "TRIELTS | Private IELTS Coach & Exam Coaching",
     description:
       "Private IELTS coaching and preparation for individuals, professionals, families, organisations, and government clients.",
     type: "website",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "TRIELTS | Private IELTS Coaching & Preparation",
+    title: "TRIELTS | Private IELTS Coach & Exam Coaching",
     description:
       "Private IELTS coaching and preparation for individuals, professionals, families, organisations, and government clients.",
   },
