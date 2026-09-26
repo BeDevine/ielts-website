@@ -7,7 +7,7 @@ export const dynamic = "force-dynamic";
 export default async function HomePage() {
   const recentPosts = await db.post
     .findMany({
-      where: { published: true },
+      where: { published: true, createdAt: { lte: new Date() } },
       orderBy: { createdAt: "desc" },
       take: 1,
     })

@@ -14,7 +14,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   ];
 
   const posts = await db.post
-    .findMany({ where: { published: true }, select: { slug: true, updatedAt: true } })
+    .findMany({ where: { published: true, createdAt: { lte: new Date() } }, select: { slug: true, updatedAt: true } })
     .catch(() => []);
 
   const postRoutes: MetadataRoute.Sitemap = posts.map((post) => ({

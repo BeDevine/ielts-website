@@ -34,7 +34,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     include: { author: { select: { name: true } } },
   });
 
-  if (!post || !post.published) notFound();
+  if (!post || !post.published || post.createdAt > new Date()) notFound();
 
   return (
     <main className="min-h-screen bg-paper">
