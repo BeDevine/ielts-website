@@ -8,9 +8,9 @@ const packages = [
     name: "Single session",
     gbpPrice: 129,
     unitGbp: null,
-    unitLabel: "per 60-minute session",
+    unitLabel: "per 50-minute session",
     description: "For a diagnostic, a focused skill review, or ongoing flexible booking.",
-    features: ["Up to 10 people, 60 minutes", "Full written feedback after each session", "Book as you go"],
+    features: ["50 minutes, individuals or groups", "Full written feedback after each session", "Book as you go"],
   },
   {
     name: "5-session package",
@@ -56,7 +56,7 @@ const audiences = [
   },
   {
     name: "Corporate programmes",
-    description: "The same rate per session, for a team of up to 10 — invoicing arranged directly.",
+    description: "The same rate per session, however many of your team join — invoicing arranged directly.",
   },
   {
     name: "Government & institutional programmes",
@@ -74,6 +74,17 @@ export default function PricingClient() {
           Prices shown in your selected currency are approximate. Billing is in GBP.
         </p>
         <CurrencySelector currency={currency} onChange={setCurrency} />
+      </div>
+
+      <div className="mt-6 max-w-2xl rounded-xl border border-brass/30 bg-brass/5 px-5 py-4">
+        <span className="font-mono text-xs uppercase tracking-wide text-brass">
+          Per session, not per person
+        </span>
+        <p className="mt-2 text-sm leading-relaxed text-ink/75">
+          You're booking my time, not a seat. Come on your own or bring colleagues, friends
+          or family at no extra cost. Just bear in mind that the more people in the session,
+          the less individual attention each person gets.
+        </p>
       </div>
 
       <div className="mt-8 grid gap-6 md:grid-cols-4">
@@ -149,8 +160,8 @@ export default function PricingClient() {
           <p className="mt-2 max-w-xl text-sm leading-relaxed text-paper/70">
             The rate itself doesn't change for organisations — it's the same per-session
             price as everyone else. What's worth a conversation: invoicing and payment
-            terms, groups larger than 10, and any reporting your HR or procurement team
-            needs.
+            terms, how to split larger teams across sessions so everyone gets enough
+            attention, and any reporting your HR or procurement team needs.
           </p>
         </div>
         <Link
