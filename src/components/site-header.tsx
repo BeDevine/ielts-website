@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const NAV_LINKS = [
   { href: "/quiz", label: "Level check" },
-  { href: "/blog", label: "Tips" },
+  { href: "/blog", label: "Tips" }, { href: "/resources", label: "Resources" },
   { href: "/testimonials", label: "Testimonials" },
   { href: "/pricing", label: "Pricing" },
   { href: "/about", label: "About" },
@@ -33,7 +33,7 @@ export default function SiteHeader({ showTagline = false }: { showTagline?: bool
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-6 text-sm">
+        <nav className="hidden xl:flex items-center gap-6 text-sm">
           <Link
             href="/global"
             aria-label="Other languages"
@@ -62,7 +62,7 @@ export default function SiteHeader({ showTagline = false }: { showTagline?: bool
         </nav>
 
         {/* Mobile: compact CTA + hamburger */}
-        <div className="flex items-center gap-2 md:hidden">
+        <div className="flex items-center gap-2 xl:hidden">
           <Link
             href="/global"
             aria-label="Other languages"
@@ -90,7 +90,7 @@ export default function SiteHeader({ showTagline = false }: { showTagline?: bool
 
       {/* Mobile dropdown */}
       {open && (
-        <nav className="md:hidden border-t border-line bg-paper px-6 py-4 flex flex-col gap-4 text-sm">
+        <nav className="xl:hidden border-t border-line bg-paper px-6 py-4 flex flex-col gap-4 text-sm">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}
