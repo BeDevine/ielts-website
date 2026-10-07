@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import "./globals.css";
+import "./globals.css"; import VisitCounter from "@/components/visit-counter";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://trielts.com"),
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className="font-body antialiased">{children}</body>
+      <body className="font-body antialiased">{children}<VisitCounter /></body>
 
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-BPRMVE5ZYY"
