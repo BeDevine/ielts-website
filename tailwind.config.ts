@@ -7,10 +7,10 @@ const config: Config = {
       colors: {
         ink: "#16213A",
         navy: "#1B2A4A",
-        paper: "#F3F1EB",
-        brass: "#2B5FAD",
-        teal: "#2F6F63",
-        line: "#DAD5C8",
+        paper: "#FFFFFF", mist: "#F1F4F9",
+        brass: "#D4293C",
+        teal: "#D4293C",
+        line: "#E4E7EE",
       },
       fontFamily: {
         display: ["Fraunces", "serif"],
